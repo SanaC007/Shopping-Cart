@@ -110,7 +110,7 @@ const Products = (props) => {
     let instock;
     const newItems = [];
     for (const item of items) {
-      if (item.name === name) {
+      if (item.name === name && item.instock >= 1) {
         item.instock = item.instock - 1;
         instock = item.instock;
         console.log(name)
@@ -175,7 +175,7 @@ const Products = (props) => {
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse
-          onClick={() => deleteCartItem(index)} //
+          onClick={() => deleteCartItem(index)}
           eventKey={1 + index}
         >
           <Card.Body>
